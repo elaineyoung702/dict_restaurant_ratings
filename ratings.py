@@ -3,6 +3,15 @@
 filename = open("scores.txt")
 
 
+def print_restaurants(rest_dict):
+
+    rest_sorted = (sorted(rest_dict.items()))
+
+    for restr, rating in rest_sorted:
+        print(f' {restr} is rated at {rating}.')
+
+
+
 def get_restaurant_ratings(file):
 
     restaurants = {}
@@ -11,21 +20,14 @@ def get_restaurant_ratings(file):
         restaurant_data = line.rstrip().split(":")
         restaurants[restaurant_data[0]] = restaurant_data[1]
 
-    rest_sorted = (sorted(restaurants.items()))
-
-    for restr, rating in rest_sorted:
-        print(f' {restr} is rated at {rating}.')
+    print_restaurants(restaurants)
 
     rest_name = input("Give me the restaurant name: ")
-    rest_rating = input("Give me the restaurant rating: ")
-    
+    rest_rating = input("Give me the restaurant rating: ")   
 
     restaurants[rest_name] = rest_rating
 
-    rest_sorted = (sorted(restaurants.items()))
-    
-    for restr, rating in rest_sorted:
-        print(f' {restr} is rated at {rating}.')
+    print_restaurants(restaurants)
 
     # pprint(rest_sorted)
 

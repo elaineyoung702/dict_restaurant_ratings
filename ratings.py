@@ -23,7 +23,16 @@ def get_restaurant_ratings(file):
     print_restaurants(restaurants)
 
     rest_name = input("Give me the restaurant name: ")
-    rest_rating = input("Give me the restaurant rating: ")   
+    rest_rating = input("Give me the restaurant rating: ")
+
+    while True:
+        if not rest_rating.isdigit():
+            rest_rating = input("Invalid rating, please try again: ") 
+        else:
+            while not 0 < int(rest_rating) < 6:
+                rest_rating = input("Invalid rating, please try again: ")
+            break
+ 
 
     restaurants[rest_name] = rest_rating
 

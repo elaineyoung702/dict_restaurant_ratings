@@ -18,5 +18,4 @@ def get_restaurant_ratings(file):
 
     # pprint(rest_sorted)
 
-
 get_restaurant_ratings(filename)
